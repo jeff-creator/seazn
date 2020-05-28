@@ -54,7 +54,7 @@
                 </p> 
                -->
                 <img class="img-fluid preload-img" src="images/empty.png" data-src="https://images.unsplash.com/photo-1587411768345-867e228218c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="image">
-                <a href="#resultCard" class="btn btn-xl mb-3 rounded-s text-uppercase font-900 shadow-s border-red2-dark  bg-red2-light btn-center-l" onclick="myRequest()">Get inspiration</a><br>
+                <a href="inspiration.html" class="btn btn-xl mb-3 rounded-s text-uppercase font-900 shadow-s border-red2-dark  bg-red2-light btn-center-l" onclick="myRequest()">Get inspiration</a><br>
                 
             </div>
         </div>
@@ -230,24 +230,14 @@
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 <script type="text/javascript">
-    const xhr = new XMLHttpRequest();
 
-
-// document.getElementById("display").innerHTML = inputValue;
-
-
-// console.log(document.getElementById("inputBox").value)
-
-
-
-      var d = new Date();
-      var n = d.getMonth();
-
-  const getSeasonalProductsArray = (n) => {
-
-      let productArray = [];
     
-    switch (n) {
+// return seasonal products array
+    var d = new Date();
+    var n = d.getMonth();
+    const getSeasonalProductsArray = (n) => {
+      let productArray = [];
+      switch (n) {
         case 0 : return productArray = []
           break;
         case 1 : return productArray = []
@@ -257,44 +247,33 @@
         case 3 : return productArray = []
           break;
         case 4 : return productArray = ['artichokes','aragula','asparagus','cabbage','chicories','chives','eggplant','fennel','kale','peppers','radicchio','spinach']
-
           break;
-      }
-
-  }
+        }
+    }
   
   
-
+const xhr = new XMLHttpRequest();
 xhr.responseType = 'json';
 xhr.onreadystatechange = () => {
-
-  
   if (xhr.readyState === XMLHttpRequest.DONE) {
     // console.log(xhr.response);
     document.getElementById("testDisplay").innerHTML = JSON.stringify(xhr.response);
     let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
-
-
-       document.getElementById("foodPic").src = picLink1  
+    document.getElementById("foodPic").src = picLink1  
   }
-
 };
   
 
 const myRequest = () => {
 
-  const seasonProductSelector = Math.floor(Math.random() * 13);
-  
+  const seasonProductSelector = Math.floor(Math.random() * 13);  
   let inputValue = getSeasonalProductsArray(n)[seasonProductSelector];
-  
-  // console.log(inputValue);
-  
   const url = 'https://api.spoonacular.com/recipes/search?apiKey=5e82b61e04a144f4a7cc689d18eba234&query='+inputValue+'&number=1';
   xhr.open('GET', url);
-  xhr.send();
-
-  
+  xhr.send();  
 };
-    </script>
+
+</script>
+    
 <script type="text/javascript" src="scripts/custom.js"></script>
 </body>
