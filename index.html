@@ -45,7 +45,7 @@
                     Three levels of roundness, small, medium and large.            
                 </p> 
                -->
-                <img class="img-fluid preload-img" src="images/empty.png" data-src="https://images.unsplash.com/photo-1587411768345-867e228218c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="image">
+                <img class="img-fluid preload-img" src="images/empty.png" data-src="https://images.unsplash.com/photo-1587411768345-867e228218c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="image" id="foodPic">
                 <a href="#" class="btn btn-xl mb-3 rounded-s text-uppercase font-900 shadow-s border-red2-dark  bg-red2-light btn-center-l" onclick="myRequest()">Get inspiration</a><br>
                 <p id="testDisplay">JSON goes here</p>
             </div>
@@ -268,7 +268,7 @@ xhr.onreadystatechange = () => {
     let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
 
 
-    //document.querySelectorAll('img')[0].src = picLink1  
+       document.getElementById("foodPic").src = picLink1  
   }
 
 };
