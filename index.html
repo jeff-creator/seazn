@@ -16,6 +16,14 @@
     
 <body class="theme-light" data-background="none" data-highlight="red2">
     
+<style>
+    
+    html {
+  scroll-behavior: smooth;
+}
+    
+    </style>
+    
 <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
     
 <div id="page">
@@ -45,20 +53,19 @@
                     Three levels of roundness, small, medium and large.            
                 </p> 
                -->
-                <img class="img-fluid preload-img" src="images/empty.png" data-src="https://images.unsplash.com/photo-1587411768345-867e228218c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="image" id="foodPic">
-                <a href="#" class="btn btn-xl mb-3 rounded-s text-uppercase font-900 shadow-s border-red2-dark  bg-red2-light btn-center-l" onclick="myRequest()">Get inspiration</a><br>
-                <p id="testDisplay">JSON goes here</p>
+                <img class="img-fluid preload-img" src="images/empty.png" data-src="https://images.unsplash.com/photo-1587411768345-867e228218c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="image">
+                <a href="#resultCard" class="btn btn-xl mb-3 rounded-s text-uppercase font-900 shadow-s border-red2-dark  bg-red2-light btn-center-l" onclick="myRequest()">Get inspiration</a><br>
+                
             </div>
         </div>
         
-              <div class="card">
+              <div class="card" id="resultCard" data-card-height="cover">
             <div class="content">
-                <h4>Card Classic</h4>
-                <p>
-                    This is the classic content box. You can modify this to any style just by adding 
-                    classes to it.
-                </p>
+                <h4>Inspiration</h4>
+                <p id="testDisplay"></p>
+                <img class="img-fluid preload-img" src="images/empty.png" data-src="" alt="image" id="foodPic">
             </div>   
+                
         </div>
 
     </div>    
