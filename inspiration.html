@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
 </head>
     
-<body class="theme-light" data-background="none" data-highlight="red2">
+<body class="theme-light" data-background="none" data-highlight="red2" onload="myRequest()">
     
     
 <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
@@ -266,8 +266,7 @@
 <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 <script type="text/javascript">
 
- // replaces the onload in html
- window.on('load', function(){ myRequest(); });
+
 
       
  // return seasonal products array
