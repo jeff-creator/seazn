@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
 </head>
     
-<body class="theme-light" data-background="none" data-highlight="red2" onload="myRequest()">
+<body class="theme-light" data-background="none" data-highlight="red2" onload="testFunction()">
     
     
 <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
@@ -47,7 +47,7 @@
                     <p id="testDisplay">Placeholder for JSON</p>
                     <a href="#" data-tab-active data-tab="tab-7">View</a>
                     <a href="#" data-tab="tab-5" onclick="myRequestRecipeID()">Description</a>
-                    <a href="#" data-tab="tab-6">Recipe</a>                    
+                    <a href="#" data-tab="tab-6" onclick="testFunction()">Recipe</a>                    
                 </div>
                 <div class="clearfix mb-3"></div>
                 <div class="tab-content" id="tab-5">
@@ -56,7 +56,7 @@
                     </p>
                 </div>
                 <div class="tab-content" id="tab-7">
-                    <img id="foodPic" class="img-fluid rounded-sm mt-2" src="https://images.unsplash.com/photo-1583116935705-d45814ac4c09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80" alt="img">
+                    <img id="foodPic" class="img-fluid rounded-sm mt-2" src="images/pictures/28w.jpg" alt="img">
                 </div>
                 <div class="tab-content " id="tab-6">
                 <div class="accordion" id="accordion-1">
@@ -264,90 +264,6 @@
 
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-<script type="text/javascript">
-
-
-
-      
- // return seasonal products array
-    var d = new Date();
-    var n = d.getMonth();
-    const getSeasonalProductsArray = (n) => {
-      let productArray = [];
-      switch (n) {
-        case 0 : return productArray = []
-          break;
-        case 1 : return productArray = []
-          break;
-        case 2 : return productArray = []
-          break;
-        case 3 : return productArray = []
-          break;
-        case 4 : return productArray = ['artichokes','aragula','asparagus','cabbage','chicories','chives','eggplant','fennel','kale','peppers','radicchio','spinach']
-          break;
-        }
-    }
-  
-//create request and handle response (to auto pick recipe)
-const xhr = new XMLHttpRequest();
-xhr.responseType = 'json';
-xhr.onreadystatechange = () => {
-  if (xhr.readyState === XMLHttpRequest.DONE) {
-    
-    document.getElementById("testDisplay").innerHTML = JSON.stringify(xhr.response);
-    let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
-    document.getElementById("foodPic").src = picLink1
-    //Here intentional implicit declaration of the recipeID varialble, to make it global scope and re-use it in the xhr2 request.
-    recipeID = xhr.response.results[0].id
-
-  }
-};
-
-//launch request to auto pick recipe
-const myRequest = () => {
-    
-  const seasonProductSelector = Math.floor(Math.random() * 13);  
-  let inputValue = getSeasonalProductsArray(n)[seasonProductSelector];
-  let url = 'https://api.spoonacular.com/recipes/search?apiKey=5e82b61e04a144f4a7cc689d18eba234&query='+inputValue+'&number=1';
-  xhr.open('GET', url);
-  xhr.send();  
-};
-    
-    
-//create request and handle response (to look for recipe details)     
-const xhr2 = new XMLHttpRequest();
-xhr2.responseType = 'json';
-xhr2.onreadystatechange = () => {
-  if (xhr2.readyState === XMLHttpRequest.DONE) {
-    
-    document.getElementById("descriptionTabContent").innerHTML = JSON.stringify(xhr2.response.summary);
-      
-    document.getElementById("ingrList").innerHTML = JSON.stringify(xhr2.response.extendedIngredients[0].originalName);
-
-    document.getElementById("instrList").innerHTML = JSON.stringify(xhr2.response.instructions);
-
-      
-      
-  }
-};
-  
-
-//launch request to look for recipe details
-
-const myRequestRecipeID = () => {
-
-  let url = 'https://api.spoonacular.com/recipes/'+recipeID+'/information?apiKey=5e82b61e04a144f4a7cc689d18eba234';
-  xhr2.open('GET', url);
-  xhr2.send();  
-    
-
-};
-
-    
-    
-    
-</script>
-    
 <script type="text/javascript" src="scripts/custom.js"></script>
 
 </body>
