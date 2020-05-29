@@ -12,9 +12,85 @@ $(document).ready(function(){
     
 	function init_template(){
                 
-        //ADD YOUR CUSTOM JAVASCRIPT CODES HERE! 
-        //Do not put inside HTML files.
-        //The init_template() function will be triggered when pages open.
+         //test function for onload
+        const testFunction = () => {
+        document.getElementById("testDisplay").innerHTML = "Hi this is a test"   
+ };
+    
+    
+ // return seasonal products array
+    var d = new Date();
+    var n = d.getMonth();
+    const getSeasonalProductsArray = (n) => {
+      let productArray = [];
+      switch (n) {
+        case 0 : return productArray = []
+          break;
+        case 1 : return productArray = []
+          break;
+        case 2 : return productArray = []
+          break;
+        case 3 : return productArray = []
+          break;
+        case 4 : return productArray = ['artichokes','aragula','asparagus','cabbage','chicories','chives','eggplant','fennel','kale','peppers','radicchio','spinach']
+          break;
+        }
+    }
+  
+//create request and handle response (to auto pick recipe)
+const xhr = new XMLHttpRequest();
+xhr.responseType = 'json';
+xhr.onreadystatechange = () => {
+  if (xhr.readyState === XMLHttpRequest.DONE) {
+    
+    document.getElementById("testDisplay").innerHTML = JSON.stringify(xhr.response);
+    let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
+    document.getElementById("foodPic").src = picLink1
+    //Here intentional implicit declaration of the recipeID varialble, to make it global scope and re-use it in the xhr2 request.
+    recipeID = xhr.response.results[0].id
+
+  }
+};
+
+//launch request to auto pick recipe
+const myRequest = () => {
+    
+  const seasonProductSelector = Math.floor(Math.random() * 13);  
+  let inputValue = getSeasonalProductsArray(n)[seasonProductSelector];
+  let url = 'https://api.spoonacular.com/recipes/search?apiKey=5e82b61e04a144f4a7cc689d18eba234&query='+inputValue+'&number=1';
+  xhr.open('GET', url);
+  xhr.send();  
+};
+    
+    
+//create request and handle response (to look for recipe details)     
+const xhr2 = new XMLHttpRequest();
+xhr2.responseType = 'json';
+xhr2.onreadystatechange = () => {
+  if (xhr2.readyState === XMLHttpRequest.DONE) {
+    
+    document.getElementById("descriptionTabContent").innerHTML = JSON.stringify(xhr2.response.summary);
+      
+    document.getElementById("ingrList").innerHTML = JSON.stringify(xhr2.response.extendedIngredients[0].originalName);
+
+    document.getElementById("instrList").innerHTML = JSON.stringify(xhr2.response.instructions);
+
+      
+      
+  }
+};
+  
+
+//launch request to look for recipe details
+
+const myRequestRecipeID = () => {
+
+  let url = 'https://api.spoonacular.com/recipes/'+recipeID+'/information?apiKey=5e82b61e04a144f4a7cc689d18eba234';
+  xhr2.open('GET', url);
+  xhr2.send();  
+    
+
+};
         
                
         //Generating Dynamic Styles to decrease CSS size and execute faster loading times. 
