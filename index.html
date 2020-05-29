@@ -54,7 +54,7 @@
                 </p> 
                -->
                 <img class="img-fluid preload-img" src="images/empty.png" data-src="https://images.unsplash.com/photo-1587411768345-867e228218c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="image">
-                <a href="inspiration.html" class="btn btn-xl mb-3 rounded-s text-uppercase font-900 shadow-s border-red2-dark  bg-red2-light btn-center-l" onclick="myRequest()">Get inspiration</a><br>
+                <a href="inspiration.html" class="btn btn-xl mb-3 rounded-s text-uppercase font-900 shadow-s border-red2-dark  bg-red2-light btn-center-l">Get inspiration</a><br>
                 
             </div>
         </div>
@@ -287,7 +287,8 @@ xhr2.onreadystatechange = () => {
     document.getElementById("descriptionTabContent").innerHTML = JSON.stringify(xhr2.response.summary);
       
     document.getElementById("ingrList").innerHTML = JSON.stringify(xhr2.response.extendedIngredients[0].originalName);
-    
+
+    document.getElementById("instrList").innerHTML = JSON.stringify(xhr2.response.extendedIngredients[0].instructions);
   }
 };
   
@@ -306,6 +307,6 @@ const myRequestRecipeID = () => {
     
 </script>
 
-    <script></script>
+    
 <script type="text/javascript" src="scripts/custom.js"></script>
 </body>
