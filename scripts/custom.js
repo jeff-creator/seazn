@@ -57,10 +57,10 @@ xhr.responseType = 'json';
 xhr.onreadystatechange = () => {
   if (xhr.readyState === XMLHttpRequest.DONE) {
     
-    //document.getElementById("testDisplay").innerHTML = JSON.stringify(xhr.response);
-    //document.getElementById("testTitle").innerHTML = JSON.stringify(xhr.response.results[0].title);
+  document.getElementById("tab-5").innerHTML = JSON.stringify(xhr.response);
+    document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(xhr.response.results[0].title);
     let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
-    //document.getElementById("foodPic").src = picLink1
+    document.getElementById("foodPic").src = picLink1
     
     //Here intentional implicit declaration of the recipeID varialble, to make it global scope and re-use it in the xhr2 request.
     recipeID = xhr.response.results[0].id
