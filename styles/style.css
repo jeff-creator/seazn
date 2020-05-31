@@ -8,7 +8,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 500;
   color: #1f1f1f;
   font-family: "Source Sans Pro", sans-serif !important;
   margin-bottom: 5px;
@@ -5965,3 +5965,11 @@ html.lb-disable-scrolling {
 .owl-dots-no-footer .owl-dots {
   transform: translateY(-18px) !important;
 }
+
+/*Custom CSS*/
+
+.img-in-card {
+    width: inherit;
+    max-width: 200px;
+}
+
