@@ -17,6 +17,8 @@ $(document).ready(function(){
         //The init_template() function will be triggered when pages open.
         
         
+        //initialize SmoothScroll plugin for all anchor links
+        var scroll = new SmoothScroll('a[href*="#"]');
         
         
         // return seasonal products array
@@ -37,7 +39,17 @@ $(document).ready(function(){
           break;
         }
     }
-    
+        
+        //
+        //
+        // Ingredient card
+        
+        
+        //display ingredient title
+        document.getElementById("testTitle").innerHTML = "It's a great season to eat "+getSeasonalProductsArray(n)[0]+"!";
+
+        //display ingredient pic
+        document.getElementById("ingrPic").src = "https://cdn3.volusion.com/kceqm.mleru/v/vspfiles/photos/1455-2.jpg?v-cache=1588155530"
         
 //create request and handle response (to auto pick recipe)
 const xhr = new XMLHttpRequest();
@@ -45,8 +57,8 @@ xhr.responseType = 'json';
 xhr.onreadystatechange = () => {
   if (xhr.readyState === XMLHttpRequest.DONE) {
     
-    document.getElementById("testDisplay").innerHTML = JSON.stringify(xhr.response);
-    document.getElementById("testTitle").innerHTML = JSON.stringify(xhr.response.results[0].title);
+    //document.getElementById("testDisplay").innerHTML = JSON.stringify(xhr.response);
+    //document.getElementById("testTitle").innerHTML = JSON.stringify(xhr.response.results[0].title);
     let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
     //document.getElementById("foodPic").src = picLink1
     
