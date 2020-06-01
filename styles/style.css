@@ -1157,15 +1157,8 @@ p {
 
 /*Scaling Animation*/
 @keyframes scale-animation {
-  0% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(1.05, 1.05);
-  }
-  0% {
-    transform: scale(1, 1);
-  }
+!
+    )
 }
 
 .scale-box {
@@ -5971,5 +5964,38 @@ html.lb-disable-scrolling {
 .img-in-card {
     width: inherit;
     max-width: 200px;
+}
+
+.img-in-card-small {
+    animation-name: shaking;
+    animation-duration: 0.5s;
+    animation-iteration-count: 10;     
+    width: inherit;
+    max-width: 70px;
+}
+
+.waiting-card {
+    height: 100vh;
+}
+
+.custom-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50%;
+  margin-bottom: auto;
+  width: 40%;
+}
+
+@keyframes shaking {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
 }
 
