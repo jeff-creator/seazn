@@ -17,6 +17,21 @@ $(document).ready(function(){
         //The init_template() function will be triggered when pages open.
         
         
+        //scroll to Ingredient card
+        
+    const target = document.getElementById('waitingPic'),
+          button = document.getElementById('button1');
+
+    button.addEventListener('click', function(){
+
+        target.scrollIntoView({
+            block: 'start',
+            behavior: 'smooth',
+            inline: 'nearest'
+        });
+
+    });
+        
         //initialize SmoothScroll plugin for all anchor links
         var scroll = new SmoothScroll('a[href*="#"]');
         
