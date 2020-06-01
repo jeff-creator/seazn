@@ -37,6 +37,8 @@ $(document).ready(function(){
           break;
         case 4 : return productArray = ['artichokes','aragula','asparagus','cabbage','chicories','chives','eggplant','fennel','kale','peppers','radicchio','spinach']
           break;
+        case 5 : return productArray = ['cucumber','olives','tomatoes', 'cabbage', 'zucchini', 'salad', 'pickles', 'strawberries', 'cherry', 'kale', 'aubergine', 'garlic', 'onion']
+          break;
         }
     }
         
