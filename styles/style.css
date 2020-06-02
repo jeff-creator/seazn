@@ -8,7 +8,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
+  font-weight: 700;
   color: #1f1f1f;
   font-family: "Source Sans Pro", sans-serif !important;
   margin-bottom: 5px;
@@ -91,8 +91,8 @@ p {
 
 /*Logos*/
 .header-logo {
-  background-size: 30px 30px;
-  width: 100px;
+  background-size: 80px 40px;
+  width: 50px;
 }
 
 .footer .footer-logo {
@@ -152,11 +152,11 @@ p {
   position: absolute;
   height: 50px;
   line-height: 50px;
-  font-size: 23px;
+  font-size: 14px;
   color: #000;
-  font-weight: 400;
+  font-weight: 600;
   z-index: 1;
-  font-family: "Didact Gothic", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .header .header-logo {
@@ -272,8 +272,9 @@ p {
 }
 
 .header-clear-medium {
-  padding-top: 70px;
+  padding-top: 50px;
 }
+/* ATTENTION: I changed the value above from 70 to 50 to get rid of the grey space between the header and the page content*/
 
 .header-clear-large {
   padding-top: 85px;
@@ -359,12 +360,12 @@ p {
 }
 
 .header-logo-left .header-logo {
-  left: -20px !important;
+  left: 0px !important;
   margin-left: 0px !important;
 }
 
 .header-logo-left .header-title {
-  left: 50px !important;
+  left: 15px !important;
   margin-left: 0px !important;
 }
 
@@ -1157,8 +1158,15 @@ p {
 
 /*Scaling Animation*/
 @keyframes scale-animation {
-!
-    )
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.05, 1.05);
+  }
+  0% {
+    transform: scale(1, 1);
+  }
 }
 
 .scale-box {
@@ -5135,6 +5143,26 @@ code {
   background-image: url(../images/pictures/30.jpg);
 }
 
+.bg-radis {
+  background-image: url(../images/pictures/radis.jpg);
+}
+
+.bg-beet {
+  background-image: url(../images/pictures/beet.jpg);
+}
+
+.bg-cucumber {
+  background-image: url(../images/pictures/cucumber.jpg);
+}
+
+.bg-salad {
+  background-image: url(../images/pictures/salad.jpg);
+}
+
+.bg-melon {
+  background-image: url(../images/pictures/melon.jpg);
+}
+
 /*Demo Colors*/
 .demo-color {
   width: 100%;
@@ -5959,43 +5987,33 @@ html.lb-disable-scrolling {
   transform: translateY(-18px) !important;
 }
 
-/*Custom CSS*/
 
-.img-in-card {
-    width: inherit;
-    max-width: 200px;
-}
+/* Custom styles */
 
-.img-in-card-small {
-    animation-name: shaking;
-    animation-duration: 0.5s;
-    animation-iteration-count: 10;     
-    width: inherit;
-    max-width: 70px;
-}
-
-.waiting-card {
+.full-page-card {
     height: 100vh;
+    margin-bottom: -30px
+    !important
 }
 
-.custom-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50%;
-  margin-bottom: auto;
-  width: 40%;
+.card-no-bottom {
+  -webkit-transform: translate3d(0, 0, 0);
+  background-size: cover;
+  border: 0px !important;
+  max-height: 150000px;
+  margin-bottom: 30px;
+  background-position: center center !important;
 }
 
-@keyframes shaking {
-  0% {
-    transform: rotate(-20deg);
-  }
-  50% {
-    transform: rotate(20deg);
-  }
-  100% {
-    transform: rotate(-20deg);
-  }
-}
+.btn-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);    
+    }
 
+.over-btn-text-margin {
+    margin-bottom: 15px;
+}
