@@ -6022,3 +6022,9 @@ html.lb-disable-scrolling {
 .over-btn-text-margin {
     margin-bottom: 15px;
 }
+
+.card-image-custom {
+  min-height: 30vh;
+  max-height: 30vh;
+  margin-left: 25vw;
+}
