@@ -5,7 +5,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-<title>seazn</title>
+<title>StickyMobile BootStrap</title>
 <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="styles/style.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
@@ -21,212 +21,165 @@
 <div id="page">
     
     <!-- header and footer bar go here-->
-   
-    <div class="header header-fixed header-logo-left">
-        <a href="index.html" class="header-title">seazn</a>
-        <a href="#" data-back-button class="header-logo"><i class="fas fa-arrow-left"></i></a>
-        <a href="#" data-toggle-theme class="header-icon header-icon-2"><i class="fas fa-lightbulb"></i></a>
+    <div class="header header-fixed header-logo-center">
+        <a href="index.html" class="header-logo"></a>
+        <a href="#" class="back-button header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
     </div>
-    
-    
     <div id="footer-bar" class="footer-bar-1">
         <a href="index.html"><i class="fa fa-home"></i><span>Home</span></a>
-
     </div>
     
     <!--start of page content, add your stuff here-->
     <div class="page-content header-clear-medium">
 
-    <!--Welcome card-->    
-    <div class="card card-fullviewport-height">
+        
+        <div class="card full-page-card">
+            
             <div class="content">
+
+                <!-- Caroussel starts below -->
+                <div class="single-slider owl-carousel owl-no-dots mb-0">
+                <div data-card-height="300" class="card mb-0 bg-radis">
+                </div>
+                <div data-card-height="300" class="card mb-0 bg-cucumber">
+                </div>
+                <div data-card-height="300" class="card mb-0 bg-beet">
+                </div>
+                <div data-card-height="300" class="card mb-0 bg-salad">
+                </div>
+                <div data-card-height="300" class="card mb-0 bg-melon">
+                </div>
                 
-                
-                <div class="single-slider owl-carousel owl-lazy owl-no-dots mb-0">
-                <div data-card-height="300" class="card mb-0">
-                    <div class="card-bottom text-center">
-                        <img src="images/pictures/radis.jpg">
-                    </div>
-                    <div class="card-overlay bg-gradient"></div>
-                </div>
-                <div data-card-height="300" class="card mb-0">
-                    <div class="card-bottom text-center">
-                       <img src="images/pictures/salad.jpg">
-                    </div>
-                    <div class="card-overlay bg-gradient"></div>
-                </div>
-
-                <div data-card-height="300" class="card mb-0">
-                    <div class="card-bottom text-center">
-                        <img src="images/pictures/cucumber.jpg">
-
-                    </div>
-                    <div class="card-overlay bg-gradient"></div>
-                </div>
-                <div data-card-height="300" class="card mb-0">
-                    <div class="card-bottom text-center">
-                        <img src="images/pictures/beet.jpg">
-
-                    </div>
-                    <div class="card-overlay bg-gradient"></div>
-                </div>
-                <div data-card-height="300" class="card mb-0">
-                    <div class="card-bottom text-center">
-                        <img src="images/pictures/melon.jpg">
-
-                    </div>
-                    <div class="card-overlay bg-gradient"></div>
-                </div>
-
+            </div>
+            <!-- Caroussel ends above -->    
             </div>   
-                <br>
-                <h1 class="text-center color-green1-dark">Cook with the seasons!</h1>
-                <button class="btn btn-xl mb-3 rounded-s text-uppercase font-900 shadow-s border-green1-dark  bg-green1-dark btn-center-l" class="mw-100" id="button1">GET INSPIRATION</button>
-                <button id="button">Test</button>
-            </div>   
-    
-        </div>    
-        
-        
-        <!--Waiting card-->    
-
-        <div class="card waiting-card" id="waitingPic">
-        <div class="content">
-                
-                
-        
-            <div class="content">
-         
-                
-                <img class="custom-center img-in-card-small"   src="images/preload-logo.png">
-                 
-
-            </div>   
-           
-                
-                <h4 class="text-center color-green1-dark"></h4>
-       
-                
-            </div>  
-         <p id=""></p>
-             
-        </div>  
-        
-        <!--Ingredient card-->    
-
-        <div class="card card-fullviewport-height">
-        <div class="content">
-                
-                
-        
-            <div class="content">
-                <h4 class="text-center" id="testTitle">Please wait...</h4>
-                <p id="testDisplay">
-                    
-                </p>
-                <div> 
-                <img class="img-in-card"  id="ingrPic" src="">
-                 </div>
-
-            </div>   
-              <p id="ingrCard"></p>
-                <br>
-                <h4 class="text-center color-green1-dark">Yummy!</h4>
-                <a href="#recipe" class="btn btn-xl mb-3 rounded-s text-uppercase font-900 shadow-s border-green1-dark  bg-green1-dark btn-center-l" class="mw-100">GIVE ME A RECIPE</a>
-                
-            </div>  
-         <p id="recipe"></p>
+            <div>
+            <h4 class="text-center over-btn-text-margin color-green1-light">Cook with the seasons!</h4>
+            
+              <a href="#" class="btn btn-l btn-center-l mb-3 rounded-s text-uppercase font-900 shadow-s border-green1-light  bg-green1-light">GET INSPIRATION</a> 
+            </div>
         </div>   
-        
-            <!--Recipe card-->    
-
-                
-                
-                <!--Recipe tabs box-->
-                <div class="card bg-theme pb-0 card-fullviewport-height">
-            <div class="content">
-                <h4 class="text-center" id="recipeTitle">Please wait...</h4>
-                <br>
-                <img class="img-fluid rounded-sm mt-2" id="foodPic" src="images/pictures/28w.jpg" alt="img">
-                <br><br>
-                <div class="tab-controls tabs-round tab-animated tabs-medium tabs-rounded shadow-xl" 
-                     data-tab-items="2" 
-                     data-tab-active="bg-blue2-dark color-white">
-                    <a href="#" data-tab-active data-tab="tab-5">Ingredients</a>
-                    <a href="#" data-tab="tab-6">Instructions</a>
-                    
-                </div>
-                <div class="clearfix mb-3"></div>
-                <div class="tab-content" id="tab-5">
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </p>
-                </div>
-                <div class="tab-content " id="tab-6">
-                    <div class="accordion mt-2" id="accordion-2">
-                        <div class="mb-0">
-                            <button class="btn pl-0 pr-0 accordion-btn" data-toggle="collapse" data-target="#collapse4" aria-expanded="false">
-                                <i class="fa fa-heart color-red2-dark mr-2"></i>
-                                Accordion Title 1
-                                <i class="fa fa-plus font-10 accordion-icon"></i>
-                            </button>
-                            <div id="collapse1" class="collapse" data-parent="#accordion-2">
-                                <div class="pt-1 pb-2">
-                                    This is the accordion content. You can add any content you want to it. Really, anything! Add images, text, lists, captions or any element you want.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-0">
-                            <button class="btn pl-0 pr-0 accordion-btn"  data-toggle="collapse" data-target="#collapse5" aria-expanded="false">
-                                <i class="fa fa-star color-yellow1-dark mr-2"></i>
-                                Accordion Title 2
-                                <i class="fa fa-chevron-down font-10 accordion-icon"></i>
-                            </button>
-                            <div id="collapse2" class="collapse"  data-parent="#accordion-2">
-                                <div class="pt-1 pb-2">
-                                    This is the accordion content. You can add any content you want to it. Really, anything! Add images, text, lists, captions or any element you want.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-0">
-                            <button class="btn pl-0 pr-0 accordion-btn" data-toggle="collapse" data-target="#collapse6" aria-expanded="false">
-                                <i class="fa fa-cloud color-blue2-dark mr-2"></i>
-                                Accordion Title 3
-                                <i class="fa fa-arrow-down font-10 accordion-icon"></i>
-                            </button>
-                            <div id="collapse3" class="collapse"  data-parent="#accordion-2">
-                                <div class="pt-1 pb-2">
-                                    This is the accordion content. You can add any content you want to it. Really, anything! Add images, text, lists, captions or any element you want.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>  
-                    
-        </div>
-                
-
-             
-
-                
-      
-    
         
     </div>    
     <!--end of page content, off canvas elements here-->
     
-   
+    <div id="menu-share" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="345" data-menu-effect="menu-over">
+        <div class="menu-title mt-n1"><h1>Share the Love</h1><p class="color-highlight">Just Tap the Social Icon. We'll add the Link</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
+        <div class="content mb-0">
+            <div class="divider mb-0"></div>
+            <div class="list-group list-custom-small list-icon-0">
+                <a href="#" class="shareToFacebook">
+                    <i class="font-18 fab fa-facebook color-facebook"></i>
+                    <span class="font-13">Facebook</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                <a href="#" class="shareToTwitter">
+                    <i class="font-18 fab fa-twitter-square color-twitter"></i>
+                    <span class="font-13">Twitter</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                <a href="#" class="shareToLinkedIn">
+                    <i class="font-18 fab fa-linkedin color-linkedin"></i>
+                    <span class="font-13">LinkedIn</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>        
+                <a href="#" class="shareToWhatsApp">
+                    <i class="font-18 fab fa-whatsapp-square color-whatsapp"></i>
+                    <span class="font-13">WhatsApp</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>   
+                <a href="#" class="shareToMail border-0">
+                    <i class="font-18 fa fa-envelope-square color-mail"></i>
+                    <span class="font-13">Email</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
     <!-- All Menus, Action Sheets, Modals, Notifications, Toasts get Placed outside the <div class="page-content"> -->
-   
+    <div id="menu-settings" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="300">
+        <div class="menu-title"><h1>Settings</h1><p class="color-highlight">Flexible and Easy to Use</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+            <div class="list-group list-custom-small">
+                <a href="#" data-toggle-theme data-trigger-switch="switch-4" class="pb-2">
+                    <i class="fa font-12 fa-moon rounded-s bg-highlight color-white mr-3"></i>
+                    <span>Dark Mode</span>
+                    <div class="custom-control scale-switch ios-switch">
+                        <input data-toggle-theme-switch type="checkbox" class="ios-input" id="switch-4">
+                        <label class="custom-control-label" for="switch-4"></label>
+                    </div>
+                    <i class="fa fa-angle-right"></i>
+                </a>    
+            </div>
+            <div class="list-group list-custom-large">
+                <a data-menu="menu-highlights" href="#">
+                    <i class="fa font-14 fa-tint bg-green1-dark rounded-s"></i>
+                    <span>Page Highlight</span>
+                    <strong>16 Colors Highlights Included</strong>
+                    <span class="badge bg-highlight color-white">HOT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>        
+                <a data-menu="menu-backgrounds" href="#" class="border-0">
+                    <i class="fa font-14 fa-cog bg-blue2-dark rounded-s"></i>
+                    <span>Background Color</span>
+                    <strong>10 Page Gradients Included</strong>
+                    <span class="badge bg-highlight color-white">NEW</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>        
+            </div>
+        </div>
+    </div>
 
 
-     
+    <div id="menu-highlights" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="380" data-menu-effect="menu-over">
+        <div class="menu-title"><h1>Highlights</h1><p class="color-highlight">Any Element can have a Highlight Color</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+            <div class="highlight-changer">
+                <a href="#" data-change-highlight="blue2"><i class="fa fa-circle color-blue2-dark"></i><span class="color-blue2-light">Default</span></a>
+                <a href="#" data-change-highlight="red2"><i class="fa fa-circle color-red1-dark"></i><span class="color-red2-light">Red</span></a>    
+                <a href="#" data-change-highlight="orange"><i class="fa fa-circle color-orange-dark"></i><span class="color-orange-light">Orange</span></a>    
+                <a href="#" data-change-highlight="pink2"><i class="fa fa-circle color-pink2-dark"></i><span class="color-pink2-light">Pink</span></a>    
+                <a href="#" data-change-highlight="magenta2"><i class="fa fa-circle color-magenta2-dark"></i><span class="color-magenta2-light">Purple</span></a>    
+                <a href="#" data-change-highlight="aqua"><i class="fa fa-circle color-aqua-dark"></i><span class="color-aqua-light">Aqua</span></a>      
+                <a href="#" data-change-highlight="teal"><i class="fa fa-circle color-teal-dark"></i><span class="color-teal-light">Teal</span></a>      
+                <a href="#" data-change-highlight="mint"><i class="fa fa-circle color-mint-dark"></i><span class="color-mint-light">Mint</span></a>      
+                <a href="#" data-change-highlight="green2"><i class="fa fa-circle color-green2-dark"></i><span class="color-green2-light">Green</span></a>    
+                <a href="#" data-change-highlight="green1"><i class="fa fa-circle color-green1-dark"></i><span class="color-green1-light">Grass</span></a>       
+                <a href="#" data-change-highlight="yellow2"><i class="fa fa-circle color-yellow2-dark"></i><span class="color-yellow2-light">Sunny</span></a>    
+                <a href="#" data-change-highlight="yellow1"><i class="fa fa-circle color-yellow1-dark"></i><span class="color-yellow1-light">Goldish</span></a>
+                <a href="#" data-change-highlight="brown1"><i class="fa fa-circle color-brown1-dark"></i><span class="color-brown1-light">Wood</span></a>    
+                <a href="#" data-change-highlight="dark1"><i class="fa fa-circle color-dark1-dark"></i><span class="color-dark1-light">Night</span></a>
+                <a href="#" data-change-highlight="dark2"><i class="fa fa-circle color-dark2-dark"></i><span class="color-dark2-light">Dark</span></a>
+                <div class="clearfix"></div>
+            </div>
+            <a href="#" data-menu="menu-settings" class="btn btn-full btn-m rounded-sm bg-highlight shadow-xl text-uppercase font-900 mt-4">Back to Settings</a>
+        </div>
+    </div>    
     <!-- Menu Settings Backgrounds-->
-
+    <div id="menu-backgrounds" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="310" data-menu-effect="menu-over">
+        <div class="menu-title"><h1>Backgrounds</h1><p class="color-highlight">Change Page Color Behind Content Boxes</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+            <div class="background-changer">
+                <a href="#" data-change-background="none"><i class="bg-theme"></i><span>Default</span></a>
+                <a href="#" data-change-background="plum"><i class="body-plum"></i><span class="color-plum-dark">Plum</span></a>
+                <a href="#" data-change-background="magenta3"><i class="body-magenta3"></i><span class="color-magenta3-dark">Magenta</span></a>
+                <a href="#" data-change-background="dark3"><i class="body-dark3"></i><span class="color-dark3-dark">Dark</span></a>
+                <a href="#" data-change-background="violet"><i class="body-violet"></i><span class="color-violet-dark">Violet</span></a>
+                <a href="#" data-change-background="red3"><i class="body-red3"></i><span class="color-red3-dark">Red</span></a>
+                <a href="#" data-change-background="green3"><i class="body-green3"></i><span class="color-green3-dark">Green</span></a>
+                <a href="#" data-change-background="sky"><i class="body-sky"></i><span class="color-sky-dark">Sky</span></a>
+                <a href="#" data-change-background="pumpkin"><i class="body-pumpkin"></i><span class="color-pumpkin-dark">Orange</span></a>
+                <a href="#" data-change-background="yellow3"><i class="body-yellow3"></i><span class="color-yellow3-dark">Yellow</span></a>
+                <div class="clearfix"></div>
+            </div>
+            <a href="#" data-menu="menu-settings" class="btn btn-full btn-m rounded-sm bg-highlight shadow-xl text-uppercase font-900 mt-4">Back to Settings</a>
+        </div>
+    </div>
 
     <!-- Be sure this is on your main visiting page, for example, the index.html page-->
     <!-- Install Prompt for Android -->
@@ -268,6 +221,5 @@
 
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
 </body>
