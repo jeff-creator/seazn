@@ -469,8 +469,8 @@ p {
 }
 
 .is-on-homescreen .header-logo {
-  margin-top: calc((constant(safe-area-inset-top))*0.2) !important;
-  margin-top: calc((env(safe-area-inset-top))*0.2) !important;
+  margin-top: calc((constant(safe-area-inset-top))*0.8) !important;
+  margin-top: calc((env(safe-area-inset-top))*0.8) !important;
 }
 
 /*-Footer Menu-*/
