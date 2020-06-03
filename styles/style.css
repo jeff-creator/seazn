@@ -6003,6 +6003,12 @@ html.lb-disable-scrolling {
     !important
 }
 
+.full-page-card-shorter {
+    height: 60vh;
+    margin-bottom: -20px
+    !important
+}
+
 
 .card-no-bottom {
   -webkit-transform: translate3d(0, 0, 0);
