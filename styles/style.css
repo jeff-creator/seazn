@@ -94,10 +94,7 @@ p {
 .header-logo {
   background-size: 80px 40px;
   width: 50px;
-  margin-top: 3px;
-  margin-bottom: 2px;
 }
-/* I added margin-top and bottom, nothing in default*/
 
 .footer .footer-logo {
   background-size: 80px 80px;
@@ -472,8 +469,8 @@ p {
 }
 
 .is-on-homescreen .header-logo {
-  margin-top: calc((constant(safe-area-inset-top))*0.6) !important;
-  margin-top: calc((env(safe-area-inset-top))*0.6) !important;
+  margin-top: calc((constant(safe-area-inset-top))*0.8) !important;
+  margin-top: calc((env(safe-area-inset-top))*0.8) !important;
 }
 
 /*-Footer Menu-*/
