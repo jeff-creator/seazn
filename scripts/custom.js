@@ -16,7 +16,14 @@ $(document).ready(function(){
         //Do not put inside HTML files.
         //The init_template() function will be triggered when pages open.
         
-               
+            
+        //initialize SmoothScroll plugin for all anchor links
+        var scroll = new SmoothScroll('a[href*="#"]');
+        
+        
+        
+        
+        
         //Generating Dynamic Styles to decrease CSS size and execute faster loading times. 
         var colorsArray = [
             //colors must be in HEX format.
