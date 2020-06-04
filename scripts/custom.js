@@ -16,13 +16,132 @@ $(document).ready(function(){
         //Do not put inside HTML files.
         //The init_template() function will be triggered when pages open.
         
-            
+        
+        ///////////Utilities
+        
+        //Generate seasonal product array selector
+        
+        const seasonProductSelector = Math.floor(Math.random() * 13); 
+        
+        //retrieve HTML page name
+        
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+        console.log(page);
+        
         //initialize SmoothScroll plugin for all anchor links
         var scroll = new SmoothScroll('a[href*="#"]');
         
+        // return seasonal products array
+        var dddd = new Date();
+        var nnnn = dddd.getMonth();
+        const getSeasonalProductsArray = (nnnn) => {
+        let productArray = [];
+      switch (nnnn) {
+        case 0 : return productArray = []
+          break;
+        case 1 : return productArray = []
+          break;
+        case 2 : return productArray = []
+          break;
+        case 3 : return productArray = []
+          break;
+        case 4 : return productArray = ['artichokes','aragula','asparagus','cabbage','chicories','chives','eggplant','fennel','kale','peppers','radicchio','spinach']
+          break;
+        case 5 : return productArray = ['cucumber','olives','tomatoes', 'cabbage', 'zucchini', 'salad', 'pickles', 'strawberries', 'cherry', 'kale', 'aubergine', 'garlic', 'onion']
+          break;
+        }
+    }
+
+        
+        ///////////End utilities
+
+        
+        
+        //
+        //
+        // Ingredient card
+        
+        
+        //display ingredient title
+       
+       if (document.getElementById("seasonalText")) { 
+        document.getElementById("seasonalText").innerHTML = "It's a great season to eat "+getSeasonalProductsArray(nnnn)[seasonProductSelector]+"!";
+
+        //display ingredient pic
+        document.getElementById("ingrPic").src = "https://cdn3.volusion.com/kceqm.mleru/v/vspfiles/photos/1455-2.jpg?v-cache=1588155530"
+        
+        } 
         
         
         
+        //create request and handle response (to auto pick recipe)
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+
+            document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(xhr.response.results[0].title);
+            let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
+            document.getElementById("recipePic").src = picLink1
+
+            //Here intentional implicit declaration of the recipeID varialble, to make it global scope and re-use it in the xhr2 request.
+            let recipeID = xhr.response.results[0].id
+
+          }
+        };
+
+            //launch request to auto pick recipe
+            const myRequest = () => {
+ 
+              let inputValue = getSeasonalProductsArray(nnnn)[seasonProductSelector];
+              let url = 'https://api.spoonacular.com/recipes/search?apiKey=5e82b61e04a144f4a7cc689d18eba234&query='+inputValue+'&number=10';
+              xhr.open('GET', url);
+              xhr.send();  
+            };
+
+        
+            //launch recipe search on page load
+           
+            myRequest();
+           
+
+            //change only recipe, same ingredient
+
+                
+            const changeRecipe = () => {
+     
+             let resultSelector = Math.floor(Math.random() * 10); console.log(resultSelector) 
+            document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(xhr.response.results[resultSelector].title);
+            let picLink1 = xhr.response.baseUri+xhr.response.results[resultSelector].image;
+            document.getElementById("recipePic").src = picLink1
+
+      
+          
+                
+            }
+       
+      
+           
+        if(document.getElementById("changeRecipeBtn") !== null) {
+            changeRecipeBtn.addEventListener("click", changeRecipe);
+            console.log("It works, you are on product/recipe page")
+        } else {
+            console.log("It works!, you are on index.html")
+        };
+        
+             
+        
+        
+        
+        
+        
+        
+        //force scroll to Top
+        function scrollToTop() { 
+            window.scrollTo(0, 0); 
+        }
+        scrollToTop();
         
         //Generating Dynamic Styles to decrease CSS size and execute faster loading times. 
         var colorsArray = [
