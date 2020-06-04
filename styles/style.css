@@ -5998,8 +5998,8 @@ html.lb-disable-scrolling {
 /* Custom styles */
 
 .full-page-card {
-    height: 85vh;
-    margin-bottom: -20px
+    height: 100vh;
+    margin-bottom: -87px
     !important
 }
 
@@ -6030,10 +6030,15 @@ html.lb-disable-scrolling {
 
 .over-btn-text-margin {
     margin-bottom: 15px;
+    margin-top: 80px;
 }
 
 .card-image-custom {
   min-height: 30vh;
   max-height: 30vh;
   margin-left: 25vw;
+}
+
+.margin-above-button {
+    margin-top: 20px;
 }
