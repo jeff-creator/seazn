@@ -6039,6 +6039,21 @@ html.lb-disable-scrolling {
   margin-left: 25vw;
 }
 
+.card-image-custom2 {
+  min-height: 20vh;
+  max-height: 30vh;
+
+}
+
 .margin-above-button {
     margin-top: 20px;
+}
+
+.margin-above-carouel {
+    margin-top: 15vh;
+}
+
+.image-center {
+        text-align: center;
+        display: block;
 }
