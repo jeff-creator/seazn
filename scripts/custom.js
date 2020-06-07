@@ -23,12 +23,6 @@ $(document).ready(function(){
         
         const seasonProductSelector = Math.floor(Math.random() * 13); 
         
-        //retrieve HTML page name
-        
-        var path = window.location.pathname;
-        var page = path.split("/").pop();
-        console.log(page);
-        
         //initialize SmoothScroll plugin for all anchor links
         var scroll = new SmoothScroll('a[href*="#"]');
         
@@ -54,13 +48,27 @@ $(document).ready(function(){
     }
 
         
+        //force scroll to Top
+        function scrollToTop() { 
+            window.scrollTo(0, 0); 
+        }
+        scrollToTop();        
+        
+   
+        //define reload page function
+        const reloadPage = () => {
+            location.reload();
+        };
+
+        
+        
         ///////////End utilities
 
         
         
         //
         //
-        // Ingredient card
+        // Seasonal product and recipe page
         
         
         //display ingredient title
@@ -74,26 +82,51 @@ $(document).ready(function(){
         } 
         
         
+        //declare recipeID (value comes from xhr request)
         
-        //create request and handle response (to auto pick recipe)
+        var recipeID;
+
+        //declare toggleDetermineRequestOrigin (a value will be assigned by request 2 launch, to determine which responsble handler should trigger)
+
+       var toggleDetermineRequestOrigin = "";
+        
+       //declare a variable to store response object 
+       var recipesResponse = {};
+       var recipesResponsePic;    
+             
+        ////All AJAX requests    
+        
+        //create request and handle response for req1 et req2
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
+        
         xhr.onreadystatechange = () => {
           if (xhr.readyState === XMLHttpRequest.DONE) {
 
-            document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(xhr.response.results[0].title);
+              
+           if(toggleDetermineRequestOrigin === ""){
+            console.log('about to enter recipe pic and title'); document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(xhr.response.results[0].title);
             let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
             document.getElementById("recipePic").src = picLink1
 
-            //Here intentional implicit declaration of the recipeID varialble, to make it global scope and re-use it in the xhr2 request.
-            let recipeID = xhr.response.results[0].id
+            recipeID = xhr.response.results[0].id
+            //now store the whole response object to be able to access it later to change recipe
+            recipesResponse = xhr.response; 
+               
+           } else if(toggleDetermineRequestOrigin === "recipeIDSearch") {
+               //display ingredient list
+               console.log('about to enter ingredients');
+               document.getElementById("ingredientsLine").innerHTML = JSON.stringify(xhr.response.extendedIngredients[0].original);
+               
+           }
 
           }
         };
 
-            //launch request to auto pick recipe
+        
+            //define request1 launch function to auto pick recipe
             const myRequest = () => {
- 
+             
               let inputValue = getSeasonalProductsArray(nnnn)[seasonProductSelector];
               let url = 'https://api.spoonacular.com/recipes/search?apiKey=5e82b61e04a144f4a7cc689d18eba234&query='+inputValue+'&number=10';
               xhr.open('GET', url);
@@ -101,35 +134,63 @@ $(document).ready(function(){
             };
 
         
-            //launch recipe search on page load
+            //define request2 launch function to get recipe ingredients and instructions
+            const myRequest2 = () => {
+ 
+              toggleDetermineRequestOrigin = "recipeIDSearch"      
+              let url = 'https://api.spoonacular.com/recipes/'+recipeID+'/information?apiKey=5e82b61e04a144f4a7cc689d18eba234';
+              xhr.open('GET', url);
+              xhr.send();  
+            };
+
+        
+        
+            //launch request 1 and activate listening to click for request 2, and also activate listen for "change product" button
            
-            myRequest();
+        
+            var checkElement = document.getElementById("seazonProductPage");
+        
+            if(!checkElement){
+            console.log('you are on index.html, no other code to run');
+        }
+            if(checkElement){
+            console.log('you are on seazn product, about to launch request 1...');
+            myRequest(); document.getElementById("getRecipeBtn").addEventListener("click", myRequest2); 
+            document.getElementById("changeProductBtn2").addEventListener("click", reloadPage); 
+             document.getElementById("changeProductBtn1").addEventListener("click", reloadPage); 
+        }
+
+           
+           
            
 
+
+           
+    
+           
+
+        
+        //////End of AJAX section
+        
+        
             //change only recipe, same ingredient
 
                 
             const changeRecipe = () => {
-     
+             console.log('changing recipe now...');
              let resultSelector = Math.floor(Math.random() * 10); console.log(resultSelector) 
-            document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(xhr.response.results[resultSelector].title);
-            let picLink1 = xhr.response.baseUri+xhr.response.results[resultSelector].image;
+            document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(recipesResponse.results[resultSelector].title);
+            let picLink1 = recipesResponse.baseUri+recipesResponse.results[resultSelector].image;
             document.getElementById("recipePic").src = picLink1
-
-      
-          
                 
-            }
+            };
        
-      
-           
-        if(document.getElementById("changeRecipeBtn") !== null) {
-            changeRecipeBtn.addEventListener("click", changeRecipe);
-            console.log("It works, you are on product/recipe page")
-        } else {
-            console.log("It works!, you are on index.html")
-        };
-        
+               
+            if(checkElement){             document.getElementById("changeRecipeBtn").addEventListener("click", changeRecipe); 
+            }
+
+       
+   
              
         
         
@@ -137,11 +198,10 @@ $(document).ready(function(){
         
         
         
-        //force scroll to Top
-        function scrollToTop() { 
-            window.scrollTo(0, 0); 
-        }
-        scrollToTop();
+
+        
+        
+        
         
         //Generating Dynamic Styles to decrease CSS size and execute faster loading times. 
         var colorsArray = [
