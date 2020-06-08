@@ -60,7 +60,7 @@ $(document).ready(function(){
             location.reload();
         };
 
-        
+
         
         ///////////End utilities
 
@@ -86,13 +86,12 @@ $(document).ready(function(){
         
         var recipeID;
 
-        //declare toggleDetermineRequestOrigin (a value will be assigned by request 2 launch, to determine which responsble handler should trigger)
+        //declare toggleDetermineRequestOrigin (a value will be assigned by request 2 launch, to determine which response handler should trigger)
 
        var toggleDetermineRequestOrigin = "";
         
        //declare a variable to store response object 
-       var recipesResponse = {};
-       var recipesResponsePic;    
+       var recipesResponse = {};   
              
         ////All AJAX requests    
         
@@ -105,6 +104,7 @@ $(document).ready(function(){
 
               
            if(toggleDetermineRequestOrigin === ""){
+            //handler for req1 is launching
             console.log('about to enter recipe pic and title'); document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(xhr.response.results[0].title);
             let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
             document.getElementById("recipePic").src = picLink1
@@ -116,7 +116,7 @@ $(document).ready(function(){
            } else if(toggleDetermineRequestOrigin === "recipeIDSearch") {
                //display ingredient list
                console.log('about to enter ingredients');
-               document.getElementById("ingredientsLine").innerHTML = JSON.stringify(xhr.response.extendedIngredients[0].original);
+               populateIngredients();
                
            }
 
@@ -140,7 +140,7 @@ $(document).ready(function(){
               toggleDetermineRequestOrigin = "recipeIDSearch"      
               let url = 'https://api.spoonacular.com/recipes/'+recipeID+'/information?apiKey=5e82b61e04a144f4a7cc689d18eba234';
               xhr.open('GET', url);
-              xhr.send();  
+              xhr.send();    
             };
 
         
@@ -155,7 +155,7 @@ $(document).ready(function(){
         }
             if(checkElement){
             console.log('you are on seazn product, about to launch request 1...');
-            myRequest(); document.getElementById("getRecipeBtn").addEventListener("click", myRequest2); 
+            myRequest(); document.getElementById("collapseIngr").addEventListener("click", myRequest2); 
             document.getElementById("changeProductBtn2").addEventListener("click", reloadPage); 
              document.getElementById("changeProductBtn1").addEventListener("click", reloadPage); 
         }
@@ -182,6 +182,10 @@ $(document).ready(function(){
             document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(recipesResponse.results[resultSelector].title);
             let picLink1 = recipesResponse.baseUri+recipesResponse.results[resultSelector].image;
             document.getElementById("recipePic").src = picLink1
+            recipeID = recipesResponse.results[resultSelector].id
+            //now refresh ingredientlist
+            myRequest2();
+            populateIngredients();
                 
             };
        
@@ -192,15 +196,48 @@ $(document).ready(function(){
        
    
              
+          
+        //Testing auto generate ingredients
         
         
+        const populateIngredients = () => {
+            
+            let ingredientList = document.getElementById("ingredientsDisplay");
+            ingredientList.innerHTML = "Please wait...";
+            ingredientList.innerHTML = "";
+           
+            for(let i=0; i<xhr.response.extendedIngredients.length; i++){
+               ingredientList.innerHTML = ingredientList.innerHTML + '<a href=\"#\">'
+                
+                      +
+                      xhr.response.extendedIngredients[i].original;
+                      +
+                '</a>'
+               
+           }
+            
         
+            /*let instructionList = document.getElementById("instructionsDisplay");
+            ingredientList.innerHTML = "";
+           
+            for(let i=0; i<xhr.response.extendedIngredients.length; i++){
+               ingredientList.innerHTML = ingredientList.innerHTML + '<a href=\"#\">'
+                
+                      +
+                      xhr.response.extendedIngredients[i].original;
+                      +
+                '</a>'
+               
+           }
+           */
+            
+        }
         
         
         
 
         
-        
+        ////////////// END CUSTOM CODE
         
         
         //Generating Dynamic Styles to decrease CSS size and execute faster loading times. 
