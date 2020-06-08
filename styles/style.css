@@ -3074,7 +3074,7 @@ code {
 
 /*List Groups*/
 .list-custom-small {
-  line-height: 50px;
+  line-height: 30px;
 }
 
 .list-custom-small .badge {
@@ -3098,7 +3098,7 @@ code {
   width: 30px;
   height: 30px;
   line-height: 30px;
-  margin-top: 10px;
+  margin-top: 0px;
   text-align: center;
   float: left;
   margin-right: 10px;
@@ -3111,7 +3111,7 @@ code {
 }
 
 .list-custom-small i {
-  line-height: 50px;
+  line-height: 40px;
 }
 
 .list-custom-small .custom-control {
@@ -6057,3 +6057,5 @@ html.lb-disable-scrolling {
         text-align: center;
         display: block;
 }
+
+
