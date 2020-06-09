@@ -19,6 +19,13 @@ $(document).ready(function(){
         
         ///////////Utilities
         
+	    $(window).on('load resize',function(){
+        if($(window).width() > 600){
+            window.location = "https://www.google.com"
+        }
+    });	
+		
+		
         //Generate seasonal product array selector
         
         const seasonProductSelector = Math.floor(Math.random() * 7); 
