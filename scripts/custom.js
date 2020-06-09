@@ -186,7 +186,7 @@ $(document).ready(function(){
         //display ingredient title
        
        if (document.getElementById("seasonalText")) { 
-        document.getElementById("seasonalText").innerHTML = 'It\'s a great time to eat...<br><br><p class="font-36 color-green1-light">'+getSeasonalProductsArray(nnnn)[seasonProductSelector]+"!</p>";
+        document.getElementById("seasonalText").innerHTML = 'It\'s a great time to eat <u>'+getSeasonalProductsArray(nnnn)[seasonProductSelector]+"</u> !";
 
         //display ingredient pic
         document.getElementById("ingrPic").src = getSeasonalProductsPicArray(nnnn)[seasonProductSelector]
@@ -217,7 +217,7 @@ $(document).ready(function(){
               
            if(toggleDetermineRequestOrigin === ""){
             //handler for req1 is launching
-            console.log('about to enter recipe pic and title'); document.getElementById("recipeTitle").innerHTML = "How about making some<br>"+ xhr.response.results[0].title+"?";
+            console.log('about to enter recipe pic and title'); document.getElementById("recipeTitle").innerHTML = "How about making some<br><u>"+ xhr.response.results[0].title+"</u> ?";
             let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
             document.getElementById("recipePic").src = picLink1
 
