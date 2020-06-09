@@ -38,12 +38,15 @@
         <!-- Seazonal product card -->
         <div class="card full-page-card">
             
+            
+   
+            
             <div class="content">
               
-            
+         
                 
-            <div>
-                <img id="ingrPic" class="card-image-custom" src="https://previews.123rf.com/images/ewastudio/ewastudio1712/ewastudio171200251/92131902-tomato-isolated-on-white-background-bunch-of-fresh-tomatoes.jpg">
+            <div class="image-center">
+                <img id="ingrPic" class="card-image-custom" src="https://cdn.dribbble.com/users/216925/screenshots/2044807/bolt.gif">
                 </div>
 
   
@@ -51,15 +54,26 @@
             <div>
               <h4 id="seasonalText"class="text-center over-btn-text-margin color-green1-light">It's a perfect time to eat salad!</h4>
             
-              <a href="#recipeCard" id="getRecipeBtn" class="btn btn-l btn-center-l mb-3 rounded-s text-uppercase font-900 shadow-s border-green1-light  bg-green1-light">GET A RECIPE</a>
-
-              <a href="#" id="changeProductBtn1" class="btn btn-l btn-center-l mb-3 rounded-s text-uppercase font-900 shadow-s border-green1-light  bg-orange-light">CHANGE PRODUCT</a>
+ 
             </div>
+                
+            <div class="card big-margin-above-button">
+          <div class="center-div">
+        
+        <a href="#recipeCard" id="getRecipeBtn" class="btn btn-m mb-3 rounded-s text-uppercase font-900 shadow-s bg-green1-light button1">GET A RECIPE</a>
+        <a class="white-text"> o</a>
+        <a href="#" id="changeProductBtn1"  class="btn btn-m mb-3 rounded-s text-uppercase font-900 shadow-s bg-orange-light button2">NEW PRODUCT</a>
+            
+        </div>
+        </div>    
+                
+                
           </div> 
         </div> 
-        
-        
-        
+ 
+
+       
+         
         <!-- Recipe card -->
         <div class="card full-page-card" id="recipeCard">
             
@@ -89,7 +103,7 @@
                             </div>
                             <div class="collapse" id="collapse-0">
                                 <div  id="ingredientsDisplay" class="list-group list-custom-small pl-3">
-                                    <a href="#">
+                                    <a>
                                         Please wait...
                                     </a>        
                                           
@@ -101,14 +115,15 @@
                                                   
                            <!-- Instructions display starts here-->
                             <div class="list-group list-custom-small list-icon-0">
-                                <a data-toggle="collapse" href="#collapse-2">
+                                <a data-toggle="collapse" href="#collapse-2"
+                                id="collapseInstr">
                                     <i class="fa font-14 fa-caret-square-right color-blue2-dark"></i>
                                     <span class="font-14">Instructions</span>
                                     <i class="fa fa-angle-down"></i>
                                 </a>        
                             </div>
                             <div class="collapse" id="collapse-2">
-                                <div id="instructionsDisplay" class="list-group list-custom-small pl-3">
+                                <div id="instructionsDisplay" class="content2">
                                     
                                     <a href="#">
                                         Please wait...
@@ -120,14 +135,20 @@
 
                         </div>
                         <!-- End Recipe collapse box above -->
-            <div>
+                
             
-              <button id="changeRecipeBtn" class="btn btn-l btn-center-l mb-3 rounded-s text-uppercase font-900 shadow-s border-green1-light  bg-orange-light margin-above-button">CHANGE RECIPE</button>
+                        <div class="card margin-above-button">
+          <div class="center-div">
+        
+        <button id="changeRecipeBtn" class="btn btn-m mb-3 rounded-s text-uppercase font-900 shadow-s bg-green1-light button1">CHANGE RECIPE</button>
+        <a class="white-text"> o</a>
+        <a href="#" id="changeProductBtn2"  class="btn btn-m mb-3 rounded-s text-uppercase font-900 shadow-s bg-orange-light button2">CHANGE PRODUCT</a>
 
-
-
-              <a href="#" id="changeProductBtn2" class="btn btn-l btn-center-l mb-3 rounded-s text-uppercase font-900 shadow-s border-green1-light  bg-orange-light">CHANGE PRODUCT</a>
-            </div>
+            
+        </div>
+        </div>       
+                
+            
           </div> 
         </div> 
         
