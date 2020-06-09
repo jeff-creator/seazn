@@ -6030,13 +6030,13 @@ html.lb-disable-scrolling {
 
 .over-btn-text-margin {
     margin-bottom: 15px;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 .card-image-custom {
   min-height: 30vh;
   max-height: 30vh;
-  margin-left: 25vw;
+
 }
 
 .card-image-custom2 {
@@ -6049,6 +6049,10 @@ html.lb-disable-scrolling {
     margin-top: 20px;
 }
 
+
+.big-margin-above-button {
+    margin-top: 60px;
+}
 .margin-above-carouel {
     margin-top: 15vh;
 }
@@ -6058,4 +6062,29 @@ html.lb-disable-scrolling {
         display: block;
 }
 
+.list-custom-small2 {
+  line-height: 20px;
+ !important
+}
 
+.content2 {
+  margin: 20px 15px 0px 15px;
+}
+
+#button1 , #button2 {
+display:inline-block;
+/**other codes**/
+}
+
+.center-div {
+    margin: auto;
+}
+
+.white-text {
+    opacity: 0.0;
+}
+
+.image-center2 {
+        margin-left: auto;
+    margin-right: auto;
+}
