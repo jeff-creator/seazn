@@ -19,15 +19,17 @@ $(document).ready(function(){
         
         ///////////Utilities
         
-		
-	//Redirect if not on mobile	
+        
+        
+        	//Redirect if not on mobile	
 	    $(window).on('load resize',function(){
         if($(window).width() > 600){
             window.location = "https://www.google.com"
         }
     });	
-		
-		
+
+        
+        
         //Generate seasonal product array selector
         
         const seasonProductSelector = Math.floor(Math.random() * 7); 
@@ -360,13 +362,13 @@ $(document).ready(function(){
         const populateInstructions = () => {
             
             let instructionList = document.getElementById("instructionsDisplay");
-            instructionList.innerHTML = '<dl class="pl-3">'
+            instructionList.innerHTML = '<dl>'
        
            
             for(let i=0; i<xhr.response[0].steps.length; i++){
                instructionList.innerHTML = instructionList.innerHTML 
                 
-                      + '<dd class="font-14">' + '<b>'+((i*1)+1)+'. </b>' +
+                      + '<dd class="font-16">' + '<b>'+((i*1)+1)+'. </b>' +
                       xhr.response[0].steps[i].step;
                       + '</dd>' 
                      
