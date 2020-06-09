@@ -19,6 +19,8 @@ $(document).ready(function(){
         
         ///////////Utilities
         
+		
+	//Redirect if not on mobile	
 	    $(window).on('load resize',function(){
         if($(window).width() > 600){
             window.location = "https://www.google.com"
