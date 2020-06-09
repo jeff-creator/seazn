@@ -21,7 +21,7 @@ $(document).ready(function(){
         
         //Generate seasonal product array selector
         
-        const seasonProductSelector = Math.floor(Math.random() * 13); 
+        const seasonProductSelector = Math.floor(Math.random() * 7); 
         
         //initialize SmoothScroll plugin for all anchor links
         var scroll = new SmoothScroll('a[href*="#"]');
@@ -32,21 +32,133 @@ $(document).ready(function(){
         const getSeasonalProductsArray = (nnnn) => {
         let productArray = [];
       switch (nnnn) {
-        case 0 : return productArray = []
+        case 0 : return productArray = ['beetroot','brussel sprouts','cauliflower','rutabaga','kale','leek','cabbage']
+
+
           break;
-        case 1 : return productArray = []
+        case 1 : return productArray = ['broccoli','turnips','parsnip','cauliflower','rutabaga','kale','leek']
+
+
           break;
-        case 2 : return productArray = []
+        case 2 : return productArray = ['artichokes','lettuce','radishes','turnips','cauliflower','broccoli','leek']
+
+
           break;
-        case 3 : return productArray = []
+        case 3 : return productArray = ['mushrooms','asparagus','lettuce','cauliflower','artichokes','leeks','broccoli']
+
+
           break;
-        case 4 : return productArray = ['artichokes','aragula','asparagus','cabbage','chicories','chives','eggplant','fennel','kale','peppers','radicchio','spinach']
+        case 4 : return productArray = ['zucchini','lettuce','asparagus','artichokes','chive','radishes','green beans']
+
+
           break;
-        case 5 : return productArray = ['cucumber','olives','tomatoes', 'cabbage', 'zucchini', 'salad', 'pickles', 'strawberries', 'cherry', 'kale', 'aubergine', 'garlic', 'onion']
+        case 5 : return productArray = ['watermelon','zucchini','garlic','celery','tomato','cucumber','carrot']
+
+          break;
+
+        case 6 : return productArray = ['onion','aubergine','radish','courgette','lettuce','green beans','chicory']
+
+
+
+          break;
+        case 7 : return productArray = ['tomato','red pepper','peas','courgette flower','cucumber','chard','onion']
+
+
+
+          break;
+        case 8 : return productArray = ['white cabbage','tomatoes','aubergine','pumpkin','shallot','rocket','mushroom']
+
+
+
+          break;
+        case 9 : return productArray = ['chicory','radicchio','turnip','horseradish','celery','cauliflower','pumkin']
+
+
+
+          break;
+        case 10 : return productArray = ['savoy cabbage','horseradish','spinach','pumpkin','white cabbage','onion','leek']
+
+
+
+          break;
+        case 11 : return productArray = ['beetroot','leek','artichokes','carrot','sauerkraut','pumpkin','fennel']
+
+
           break;
         }
     }
 
+        
+
+        const getSeasonalProductsPicArray = (nnnn) => {
+        let picArray = [];
+      switch (nnnn) {
+        case 0 : return picArray = ['https://image.freepik.com/free-photo/beetroot-isolated-white-background_42547-291.jpg','https://images.assetsdelivery.com/compings_v2/elenathewise/elenathewise1001/elenathewise100100055.jpg','https://image.freepik.com/free-photo/fresh-cauliflower-isolated-white-background_33736-2684.jpg','https://www.cuisinealafrancaise.com/img/thumbs/Navets-01929e6e790486ae20ac9ba47adb2ba1.jpg','https://www.biendecheznous.be/sites/default/files/ps_image/istock_savooikool.jpg','https://cdn.pratico-pratiques.com/app/uploads/sites/6/2018/09/05142626/poireaux.jpeg','https://images.heb.com/is/image/HEBGrocery/000374791']
+
+
+
+          break;
+        case 1 : return picArray = ['https://image.freepik.com/free-photo/fresh-broccoli-blocks-cooking-isolated-white-background_33736-2457.jpg','https://www.cuisinealafrancaise.com/img/thumbs/Navets-01929e6e790486ae20ac9ba47adb2ba1.jpg','https://www.allmychefs.com/images/1515/370-274/ffffff/panais.jpg?poix=50&poiy=50','https://image.freepik.com/free-photo/fresh-cauliflower-isolated-white-background_33736-2684.jpg','https://www.cuisinealafrancaise.com/img/thumbs/Navets-01929e6e790486ae20ac9ba47adb2ba1.jpg','https://www.biendecheznous.be/sites/default/files/ps_image/istock_savooikool.jpg','https://cdn.pratico-pratiques.com/app/uploads/sites/6/2018/09/05142626/poireaux.jpeg']
+
+
+
+          break;
+        case 2 : return picArray = ['https://cdn3.volusion.com/kceqm.mleru/v/vspfiles/photos/1455-2.jpg?v-cache=1588155530','https://img-3.journaldesfemmes.fr/Hwbeol52Jz1DRBwgjBjrkmDF4Zg=/910x607/smart/e768c994317848edb31ced2ab6a2f35e/ccmcms-jdf/10661612.jpg','https://lh3.googleusercontent.com/proxy/kjaq923jj7HpBQlXdxxof_1PFplxK9zBpvtBGj1m5kRDTggmtCStspZUJNA8D4mkFHJT1exjJWSpe2UBPw3QVz7jAwnxYVUqt5lyRj3KS9M4KOu86-eJIqc','https://www.cuisinealafrancaise.com/img/thumbs/Navets-01929e6e790486ae20ac9ba47adb2ba1.jpg','https://image.freepik.com/free-photo/fresh-cauliflower-isolated-white-background_33736-2684.jpg','https://image.freepik.com/free-photo/fresh-broccoli-blocks-cooking-isolated-white-background_33736-2457.jpg','https://cdn.pratico-pratiques.com/app/uploads/sites/6/2018/09/05142626/poireaux.jpeg']
+
+
+
+          break;
+        case 3 : return picArray = ['https://cleananddelicious.com/wp-content/uploads/2015/12/Mushroom640-1.jpg','https://pngriver.com/wp-content/uploads/2018/04/Download-Asparagus-Transparent-Background.png','https://img-3.journaldesfemmes.fr/Hwbeol52Jz1DRBwgjBjrkmDF4Zg=/910x607/smart/e768c994317848edb31ced2ab6a2f35e/ccmcms-jdf/10661612.jpg','https://image.freepik.com/free-photo/fresh-cauliflower-isolated-white-background_33736-2684.jpg','https://cdn3.volusion.com/kceqm.mleru/v/vspfiles/photos/1455-2.jpg?v-cache=1588155530','https://cdn.pratico-pratiques.com/app/uploads/sites/6/2018/09/05142626/poireaux.jpeg','https://image.freepik.com/free-photo/fresh-broccoli-blocks-cooking-isolated-white-background_33736-2457.jpg']
+
+
+
+          break;
+        case 4 : return picArray = ['https://img-3.journaldesfemmes.fr/PVIbH_pGxMFhGPl8oEkWr3DbtaY=/910x607/smart/3d4af6fac7234c2283fd7d9cf34e6981/ccmcms-jdf/10659281.jpg','https://img-3.journaldesfemmes.fr/Hwbeol52Jz1DRBwgjBjrkmDF4Zg=/910x607/smart/e768c994317848edb31ced2ab6a2f35e/ccmcms-jdf/10661612.jpg','https://pngriver.com/wp-content/uploads/2018/04/Download-Asparagus-Transparent-Background.png','https://cdn3.volusion.com/kceqm.mleru/v/vspfiles/photos/1455-2.jpg?v-cache=1588155530','https://www.agrimaroc.net/wp-content/uploads/2018/05/ciboulette28.jpg','https://lh3.googleusercontent.com/proxy/kjaq923jj7HpBQlXdxxof_1PFplxK9zBpvtBGj1m5kRDTggmtCStspZUJNA8D4mkFHJT1exjJWSpe2UBPw3QVz7jAwnxYVUqt5lyRj3KS9M4KOu86-eJIqc','https://image.freepik.com/free-photo/green-beans-handful-isolated-white-background-cutout_1205-1714.jpg']
+
+
+
+          break;
+        case 5 : return picArray = ['https://www.cuisine-de-bebe.com/wp-content/uploads/gde-past%C3%A8que.jpg','https://img-3.journaldesfemmes.fr/PVIbH_pGxMFhGPl8oEkWr3DbtaY=/910x607/smart/3d4af6fac7234c2283fd7d9cf34e6981/ccmcms-jdf/10659281.jpg','https://www.bbcgoodfood.com/sites/default/files/glossary/garlic.jpg','https://image.freepik.com/free-photo/green-celery-white-background-healthy-eating_8454-443.jpg','https://img-3.journaldesfemmes.fr/XefjM-y39CEUxVYN84YvVrrPA-I=/910x607/smart/c56b0b2648d747c28d82300380c1a207/ccmcms-jdf/10523670.jpg','https://img-3.journaldesfemmes.fr/ov22esa_6QehxsFs7mi2QtdfFOE=/910x607/smart/46dbda9272fb4f74bb89fda8c58f61b1/ccmcms-jdf/10659242.jpg','https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1lpRi0OYBJD24ITqKfp3Tig7yl_hn6LIxdB7h4ijhk-FyXuKd&usqp=CAU']
+
+
+          break;
+
+        case 6 : return picArray = ['https://www.ukscreenalliance.co.uk/wp-content/uploads/2019/06/Onion-AdobeStock_123486457-2048x1403.jpeg','https://lh3.googleusercontent.com/proxy/d1uCi_-m3nt4NtnknC4C8D4TQ6x8MjDJ_X9A2VcakRL05DOxdcZnPQGUtwxIOEkogAEUtNEbHrYIjv1fRcqbiIbs-J8qtZbCH9Td','https://lh3.googleusercontent.com/proxy/kjaq923jj7HpBQlXdxxof_1PFplxK9zBpvtBGj1m5kRDTggmtCStspZUJNA8D4mkFHJT1exjJWSpe2UBPw3QVz7jAwnxYVUqt5lyRj3KS9M4KOu86-eJIqc','https://img-3.journaldesfemmes.fr/PVIbH_pGxMFhGPl8oEkWr3DbtaY=/910x607/smart/3d4af6fac7234c2283fd7d9cf34e6981/ccmcms-jdf/10659281.jpg','https://img-3.journaldesfemmes.fr/Hwbeol52Jz1DRBwgjBjrkmDF4Zg=/910x607/smart/e768c994317848edb31ced2ab6a2f35e/ccmcms-jdf/10661612.jpg','https://image.freepik.com/free-photo/green-beans-handful-isolated-white-background-cutout_1205-1714.jpg','https://www.saisons-fruits-legumes.fr/www/img/fruitsandvegetables/endive.jpeg']
+
+
+
+
+          break;
+        case 7 : return picArray = ['https://img-3.journaldesfemmes.fr/XefjM-y39CEUxVYN84YvVrrPA-I=/910x607/smart/c56b0b2648d747c28d82300380c1a207/ccmcms-jdf/10523670.jpg','https://az836796.vo.msecnd.net/media/image/product/en/large/0000000004688.jpg','https://canyoumicrowaveit.com/wp-content/uploads/2018/03/Peas-300x234.jpg','https://www.naturespride.eu/uploads/images/producten/courgettebloem_2a.jpg','https://img-3.journaldesfemmes.fr/ov22esa_6QehxsFs7mi2QtdfFOE=/910x607/smart/46dbda9272fb4f74bb89fda8c58f61b1/ccmcms-jdf/10659242.jpg','https://thumbs.dreamstime.com/b/swiss-rainbow-chard-isolated-white-bunch-leafves-background-fresh-yellow-red-green-colors-top-view-flat-lay-164229057.jpg','https://www.ukscreenalliance.co.uk/wp-content/uploads/2019/06/Onion-AdobeStock_123486457-2048x1403.jpeg']
+
+
+
+
+          break;
+        case 8 : return picArray = ['https://cdn.shopify.com/s/files/1/0018/8327/5325/products/White_Cabbage.jpg?v=1587107652','https://img-3.journaldesfemmes.fr/XefjM-y39CEUxVYN84YvVrrPA-I=/910x607/smart/c56b0b2648d747c28d82300380c1a207/ccmcms-jdf/10523670.jpg','https://lh3.googleusercontent.com/proxy/d1uCi_-m3nt4NtnknC4C8D4TQ6x8MjDJ_X9A2VcakRL05DOxdcZnPQGUtwxIOEkogAEUtNEbHrYIjv1fRcqbiIbs-J8qtZbCH9Td','https://www.akesohealthsciences.com/wp-content/uploads/2018/12/AdobeStock_45465133-300x210.jpeg','https://produits.bienmanger.com/34669-0w470h470_Echalote_Fraiche_France_Bio.jpg','https://www.academiedugout.fr/images/16383/370-274/ffffff/fotolia_47160505_s-copy.jpg?poix=50&poiy=50','https://cleananddelicious.com/wp-content/uploads/2015/12/Mushroom640-1.jpg']
+
+
+
+          break;
+        case 9 : return picArray = ['https://www.saisons-fruits-legumes.fr/www/img/fruitsandvegetables/endive.jpeg','https://www.almagourmet.com/store/images/radicchio-tardivo.jpg','https://www.cuisinealafrancaise.com/img/thumbs/Navets-01929e6e790486ae20ac9ba47adb2ba1.jpg','https://www.lesjardinsdalbert.fr/wp-content/uploads/2015/10/Capture-d%E2%80%99%C3%A9cran-2015-10-14-%C3%A0-18.32.09.png','https://image.freepik.com/free-photo/green-celery-white-background-healthy-eating_8454-443.jpg','https://image.freepik.com/free-photo/fresh-cauliflower-isolated-white-background_33736-2684.jpg','https://www.akesohealthsciences.com/wp-content/uploads/2018/12/AdobeStock_45465133-300x210.jpeg']
+
+
+
+
+          break;
+        case 10 : return picArray = ['https://img.rasset.ie/000a6c0c-1600.jpg','https://www.lesjardinsdalbert.fr/wp-content/uploads/2015/10/Capture-d%E2%80%99%C3%A9cran-2015-10-14-%C3%A0-18.32.09.png','https://www.plaineduroussillon.com/wp-content/uploads/2017/06/Epinard.png','https://www.akesohealthsciences.com/wp-content/uploads/2018/12/AdobeStock_45465133-300x210.jpeg','https://cdn.shopify.com/s/files/1/0018/8327/5325/products/White_Cabbage.jpg?v=1587107652','https://www.ukscreenalliance.co.uk/wp-content/uploads/2019/06/Onion-AdobeStock_123486457-2048x1403.jpeg','https://cdn.pratico-pratiques.com/app/uploads/sites/6/2018/09/05142626/poireaux.jpeg']
+
+
+
+
+          break;
+        case 11 : return picArray = ['https://image.freepik.com/free-photo/beetroot-isolated-white-background_42547-291.jpg','https://cdn.pratico-pratiques.com/app/uploads/sites/6/2018/09/05142626/poireaux.jpeg','https://cdn3.volusion.com/kceqm.mleru/v/vspfiles/photos/1455-2.jpg?v-cache=1588155530','https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1lpRi0OYBJD24ITqKfp3Tig7yl_hn6LIxdB7h4ijhk-FyXuKd&usqp=CAU','https://produits.bienmanger.com/35980-1w0h0_Organic_Raw_Sauerkraut_From_France.jpg','https://www.akesohealthsciences.com/wp-content/uploads/2018/12/AdobeStock_45465133-300x210.jpeg','https://assets.reluctantgourmet.com/wp-content/uploads/2010/03/02162849/1f927a512a9909833c7b57ab40062fc5.jpg']
+
+
+
+          break;
+        }
+    }
         
         //force scroll to Top
         function scrollToTop() { 
@@ -57,7 +169,7 @@ $(document).ready(function(){
    
         //define reload page function
         const reloadPage = () => {
-            location.reload();
+            window.location = "seazn-product.html"
         };
 
 
@@ -74,10 +186,10 @@ $(document).ready(function(){
         //display ingredient title
        
        if (document.getElementById("seasonalText")) { 
-        document.getElementById("seasonalText").innerHTML = "It's a great season to eat "+getSeasonalProductsArray(nnnn)[seasonProductSelector]+"!";
+        document.getElementById("seasonalText").innerHTML = 'It\'s a great time to eat...<br><br><p class="font-36 color-green1-light">'+getSeasonalProductsArray(nnnn)[seasonProductSelector]+"!</p>";
 
         //display ingredient pic
-        document.getElementById("ingrPic").src = "https://cdn3.volusion.com/kceqm.mleru/v/vspfiles/photos/1455-2.jpg?v-cache=1588155530"
+        document.getElementById("ingrPic").src = getSeasonalProductsPicArray(nnnn)[seasonProductSelector]
         
         } 
         
@@ -105,7 +217,7 @@ $(document).ready(function(){
               
            if(toggleDetermineRequestOrigin === ""){
             //handler for req1 is launching
-            console.log('about to enter recipe pic and title'); document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(xhr.response.results[0].title);
+            console.log('about to enter recipe pic and title'); document.getElementById("recipeTitle").innerHTML = "How about making some<br>"+ xhr.response.results[0].title+"?";
             let picLink1 = xhr.response.baseUri+xhr.response.results[0].image;
             document.getElementById("recipePic").src = picLink1
 
@@ -118,7 +230,13 @@ $(document).ready(function(){
                console.log('about to enter ingredients');
                populateIngredients();
                
+           } else if(toggleDetermineRequestOrigin === "instructionsSearch") {
+               //display instructions list
+               console.log('about to enter instructions');
+               populateInstructions();
+               
            }
+              
 
           }
         };
@@ -128,13 +246,13 @@ $(document).ready(function(){
             const myRequest = () => {
              
               let inputValue = getSeasonalProductsArray(nnnn)[seasonProductSelector];
-              let url = 'https://api.spoonacular.com/recipes/search?apiKey=5e82b61e04a144f4a7cc689d18eba234&query='+inputValue+'&number=10';
+              let url = 'https://api.spoonacular.com/recipes/search?apiKey=5e82b61e04a144f4a7cc689d18eba234&query='+inputValue+'&number=10&limitLicense=true&instructionsRequired=true';
               xhr.open('GET', url);
               xhr.send();  
             };
 
         
-            //define request2 launch function to get recipe ingredients and instructions
+            //define request2 launch function to get recipe ingredients 
             const myRequest2 = () => {
  
               toggleDetermineRequestOrigin = "recipeIDSearch"      
@@ -142,10 +260,19 @@ $(document).ready(function(){
               xhr.open('GET', url);
               xhr.send();    
             };
+        
+             //define request3 launch function to get recipe instructions
+            const myRequest3 = () => {
+ 
+              toggleDetermineRequestOrigin = "instructionsSearch"      
+              let url = 'https://api.spoonacular.com/recipes/'+recipeID+'/analyzedInstructions?apiKey=5e82b61e04a144f4a7cc689d18eba234';
+              xhr.open('GET', url);
+              xhr.send();    
+            };
 
         
         
-            //launch request 1 and activate listening to click for request 2, and also activate listen for "change product" button
+            //launch request 1 and activate listening to click for requests 2 and 3, and also activate listen for "change product" button
            
         
             var checkElement = document.getElementById("seazonProductPage");
@@ -156,6 +283,8 @@ $(document).ready(function(){
             if(checkElement){
             console.log('you are on seazn product, about to launch request 1...');
             myRequest(); document.getElementById("collapseIngr").addEventListener("click", myRequest2); 
+            document.getElementById("collapseInstr").addEventListener("click", myRequest3); 
+            
             document.getElementById("changeProductBtn2").addEventListener("click", reloadPage); 
              document.getElementById("changeProductBtn1").addEventListener("click", reloadPage); 
         }
@@ -179,13 +308,14 @@ $(document).ready(function(){
             const changeRecipe = () => {
              console.log('changing recipe now...');
              let resultSelector = Math.floor(Math.random() * 10); console.log(resultSelector) 
-            document.getElementById("recipeTitle").innerHTML = "How about making some "+ JSON.stringify(recipesResponse.results[resultSelector].title);
+            document.getElementById("recipeTitle").innerHTML = "How about making some<br>"+ recipesResponse.results[resultSelector].title+"?";
             let picLink1 = recipesResponse.baseUri+recipesResponse.results[resultSelector].image;
             document.getElementById("recipePic").src = picLink1
             recipeID = recipesResponse.results[resultSelector].id
             //now refresh ingredientlist
             myRequest2();
-            populateIngredients();
+            document.getElementById("instructionsDisplay").innerHTML = "Please wait..."
+            setTimeout(myRequest3, 1000);
                 
             };
        
@@ -197,7 +327,7 @@ $(document).ready(function(){
    
              
           
-        //Testing auto generate ingredients
+        //Populate ingredients and instructions
         
         
         const populateIngredients = () => {
@@ -207,32 +337,34 @@ $(document).ready(function(){
             ingredientList.innerHTML = "";
            
             for(let i=0; i<xhr.response.extendedIngredients.length; i++){
-               ingredientList.innerHTML = ingredientList.innerHTML + '<a href=\"#\">'
+               ingredientList.innerHTML = ingredientList.innerHTML + '<li>'
                 
                       +
                       xhr.response.extendedIngredients[i].original;
                       +
-                '</a>'
+                '</li>'
                
            }
-            
-        
-            /*let instructionList = document.getElementById("instructionsDisplay");
-            ingredientList.innerHTML = "";
-           
-            for(let i=0; i<xhr.response.extendedIngredients.length; i++){
-               ingredientList.innerHTML = ingredientList.innerHTML + '<a href=\"#\">'
-                
-                      +
-                      xhr.response.extendedIngredients[i].original;
-                      +
-                '</a>'
-               
-           }
-           */
             
         }
-        
+            
+        const populateInstructions = () => {
+            
+            let instructionList = document.getElementById("instructionsDisplay");
+            instructionList.innerHTML = '<dl class="pl-3">'
+       
+           
+            for(let i=0; i<xhr.response[0].steps.length; i++){
+               instructionList.innerHTML = instructionList.innerHTML 
+                
+                      + '<dd>' + '<b>'+((i*1)+1)+'. </b>' +
+                      xhr.response[0].steps[i].step;
+                      + '</dd>' 
+                     
+           }
+            instructionList.innerHTML = instructionList.innerHTML + '</dl>'
+                      
+        }
         
         
 
