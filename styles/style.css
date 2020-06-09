@@ -1,7 +1,8 @@
 /*Typography Settings*/
 body {
   font-size: 13px;
-  font-family: "Roboto", sans-serif !important;
+  font-family: 'Baloo Thambi 2', cursive
+  !important;
   line-height: 26px !important;
   color: #6c6c6c !important;
   background-color: #f0f0f0;
@@ -10,7 +11,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #1f1f1f;
-  font-family: "Source Sans Pro", sans-serif !important;
+  font-family: 'Baloo Thambi 2', cursive
+  !important;
   margin-bottom: 5px;
   letter-spacing: -0.3px;
 }
@@ -120,7 +122,7 @@ p {
 
 /*--Header---*/
 .header-title span {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Baloo Thambi 2', cursive;
 }
 
 .footer-title span {
@@ -155,9 +157,9 @@ p {
   line-height: 50px;
   font-size: 21px;
   color: #000;
-  font-weight: 600;
+  font-weight: 700;
   z-index: 1;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Baloo Thambi 2', cursive;
 }
 
 .header .header-logo {
@@ -6029,8 +6031,8 @@ html.lb-disable-scrolling {
     }
 
 .over-btn-text-margin {
-    margin-bottom: 15px;
-    margin-top: 50px;
+    margin-bottom: 0px;
+    margin-top: 20px;
 }
 
 .card-image-custom {
@@ -6042,6 +6044,12 @@ html.lb-disable-scrolling {
 .card-image-custom2 {
   min-height: 20vh;
   max-height: 30vh;
+
+}
+
+.card-image-custom3 {
+  min-height: 10vh;
+  max-height: 15vh;
 
 }
 
