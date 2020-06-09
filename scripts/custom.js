@@ -186,7 +186,7 @@ $(document).ready(function(){
         //display ingredient title
        
        if (document.getElementById("seasonalText")) { 
-        document.getElementById("seasonalText").innerHTML = 'It\'s a great time to eat <u>'+getSeasonalProductsArray(nnnn)[seasonProductSelector]+"</u> !";
+        document.getElementById("seasonalText").innerHTML = 'It\'s a great time to eat <br><u>'+getSeasonalProductsArray(nnnn)[seasonProductSelector]+"</u> !";
 
         //display ingredient pic
         document.getElementById("ingrPic").src = getSeasonalProductsPicArray(nnnn)[seasonProductSelector]
@@ -207,7 +207,7 @@ $(document).ready(function(){
              
         ////All AJAX requests    
         
-        //create request and handle response for req1 et req2
+        //create request and handle response for req1 & req2 & req3
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         
@@ -337,7 +337,7 @@ $(document).ready(function(){
             ingredientList.innerHTML = "";
            
             for(let i=0; i<xhr.response.extendedIngredients.length; i++){
-               ingredientList.innerHTML = ingredientList.innerHTML + '<li>'
+               ingredientList.innerHTML = ingredientList.innerHTML + '<li class="customfont">'
                 
                       +
                       xhr.response.extendedIngredients[i].original;
@@ -357,7 +357,7 @@ $(document).ready(function(){
             for(let i=0; i<xhr.response[0].steps.length; i++){
                instructionList.innerHTML = instructionList.innerHTML 
                 
-                      + '<dd>' + '<b>'+((i*1)+1)+'. </b>' +
+                      + '<dd class="font-14">' + '<b>'+((i*1)+1)+'. </b>' +
                       xhr.response[0].steps[i].step;
                       + '</dd>' 
                      
