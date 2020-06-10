@@ -21,27 +21,7 @@ $(document).ready(function(){
         
 		
 		
-	/// Firebase code
-		
-	
-	  // Your web app's Firebase configuration
-	  var firebaseConfig = {
-	    apiKey: "AIzaSyBTVevmQ94qX3Ps_VYTvWYgGeH3XeF7O5g",
-	    authDomain: "seazn-6ff74.firebaseapp.com",
-	    databaseURL: "https://seazn-6ff74.firebaseio.com",
-	    projectId: "seazn-6ff74",
-	    storageBucket: "seazn-6ff74.appspot.com",
-	    messagingSenderId: "525118639549",
-	    appId: "1:525118639549:web:c905a8ed56b9b8e44a96d4",
-	    measurementId: "G-YLD9G7376E"
-	  };
-	  // Initialize Firebase
-	  firebase.initializeApp(firebaseConfig);
-	  firebase.analytics();
-	  firebase.auth();	
 
-	///end Firebase code	
-        
         
        //Redirect if not on mobile	
 	    $(window).on('load resize',function(){
